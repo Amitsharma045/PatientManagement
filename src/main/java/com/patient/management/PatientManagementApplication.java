@@ -7,7 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PatientManagementApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PatientManagementApplication.class, args); 
+		System.out.println();
+		SpringApplication.run(PatientManagementApplication.class, args);
 	}
 
 }
