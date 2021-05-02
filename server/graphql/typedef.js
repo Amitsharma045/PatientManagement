@@ -6,7 +6,7 @@ module.exports = gql`
         MALE
         OTHER
     }
-    type Patient{
+    type Patient {
         id: ID!
         createdDate:String,
         createdBy:String,
@@ -16,7 +16,7 @@ module.exports = gql`
         patientName:String!,
         mobileNumber:String,
         emailAddress:String,
-        gender:[GenderEnum]!,
+        gender:[GenderEnum]!, 
         dateOfBirth:String!,
         residenceCity:String,
         defaultPatient:Boolean!,
@@ -24,6 +24,7 @@ module.exports = gql`
         profilePic:String
     }
     type ProUser{
+        id: ID!
         createdDate:String,
         createdBy:String,
         modifiedBy:String,
@@ -66,11 +67,11 @@ module.exports = gql`
         patientName:String!,
         mobileNumber:String,
         emailAddress:String,
-        gender:[GenderEnum]!,
-        dateOfBirth:String!,
+        gender:[GenderEnum],
+        dateOfBirth:String,
         residenceCity:String,
-        defaultPatient:Boolean!,
-        communicationPreference:String!,
+        defaultPatient:Boolean,
+        communicationPreference:String,
         profilePic:String
     }
     type Query{

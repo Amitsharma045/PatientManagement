@@ -1,15 +1,22 @@
 const {model, Schema} = require('mongoose')
+const validator = require('validator')
+const baseSchema = require('./BaseSchema')
 
 const patientSchema = new Schema({
-    createdDate:String,
-    createdBy:String,
-    modifiedBy:String,
-    modifiedDate:String,
-    obsoleteFlag:Boolean,
     patientName:String,
     mobileNumber:String,
-    emailAddress:String,
-    gender:String,
+    emailAddress:{
+        type:String,
+        validate:{
+            validator: validator.isEmail,
+            message: '{VALUE} is not a valid email',
+        }
+    },
+    gender:{
+        type:String,
+        enum:['MALE', 'FEMALE','OTHERS'],
+        message:'{VALUE} is not supported!!!'
+    },
     dateOfBirth:String,
     residenceCity:String,
     defaultPatient:{
@@ -20,4 +27,5 @@ const patientSchema = new Schema({
     profilePic:String
 })
 
+patientSchema.plugin(baseSchema)
 module.exports = model('Patients', patientSchema)

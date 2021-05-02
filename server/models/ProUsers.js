@@ -1,11 +1,8 @@
 const {model, Schema} = require('mongoose')
+const baseSchema = require('./BaseSchema')
 
 const proUserSchema = new Schema({
-    createdDate:String,
-    createdBy:String,
-    modifiedBy:String,
-    modifiedDate:String,
-    obsoleteFlag:Boolean,
+    ...baseSchema,
     name:String,
     mobile:String,
     email:String,

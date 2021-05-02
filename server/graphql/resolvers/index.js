@@ -1,12 +1,12 @@
-const patientResolver = require('./patient')
-const proUserResolver = require('./proUser')
+const patientResolver = require('./patientResolver')
+const proUserResolver = require('./proUserResolver')
 
 module.exports = {
     Query:{
         ...patientResolver.Query
     },
     Mutation:{
-        ...proUserResolver.Mutation,
+        
         ...patientResolver.Mutation,
     }
 }

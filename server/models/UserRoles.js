@@ -1,11 +1,8 @@
 const {model, Schema} = require('mongoose')
+const baseSchema = require('./BaseSchema')
 
 const userRoleSchema = new Schema({
-    createdDate:String,
-    createdBy:String,
-    modifiedBy:String,
-    modifiedDate:String,
-    obsoleteFlag:Boolean,
+    ...baseSchema,
     roleName:String,
     roleCapability:[
         {
